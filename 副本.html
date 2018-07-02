@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+
+<link rel="stylesheet" type="text/css" href="css/zzsc.css">
+<link rel="stylesheet" type="text/css" href="dist/css/txt.wav.css">
+
+</head>
+<style>
+	  body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* background: black; */
+        background: url(9.jpg) no-repeat fixed center;
+        overflow: hidden;
+    }
+
+    .loader {
+        width: 10em;
+        height: 10em;
+        font-size: 10px;
+        box-sizing: border-box;
+        border-top: 0.3em solid hotpink;
+        border-radius: 50%;
+        position: relative;
+        /* background: black; */
+        animation: rotating-out 2s ease-in-out infinite;
+
+    }
+
+    .loader::before,
+    .loader::after {
+        content: "";
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border-radius: 50%;
+        box-sizing: border-box;
+        top: -0.2em;
+        /* background: black; */
+    }
+
+    .loader::before {
+        border-top: 0.3em solid dodgerblue;
+        transform: rotate(120deg);
+    }
+
+    .loader::after {
+        border-top: 0.3em solid gold;
+        transform: rotate(240deg);
+    }
+
+    .loader div {
+        position: absolute;
+        color: white;
+        width: inherit;
+        height: inherit;
+        text-align: center;
+        line-height: 10em;
+        animation: rotating-in 2s linear infinite;
+
+
+    }
+
+    @keyframes rotating-out {
+        50% {
+            transform: rotate(calc(180deg));
+        }
+        100% {
+            transform: rotate(calc(360deg));
+        }
+    }
+
+    @keyframes rotating-in {
+        50% {
+            transform: rotate(calc(-180deg));
+        }
+        100% {
+            transform: rotate(calc(-360deg));
+        }
+    }
+</style>
+<body>
+<div class="loader zzsc">
+
+		<div class="txtwav flip">
+		 Loading......
+		</div>
+</div>
+
+<script src="dist/js/txt.wav.min.js"></script>
+
+</body>
+</html>
